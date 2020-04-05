@@ -1,0 +1,11 @@
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('build/app.css') }}" >
+{% endblock %}
+{% block body %}
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="input_boton">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+{% endblock %}
