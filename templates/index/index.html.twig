@@ -4,20 +4,28 @@
   
 
 {% block body %}
+
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-<div class="card">
-  <div class="card-header">
-   Informatique
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Quand les machines font des mathématiques</h5>
-    <h5 >01/04/2020</h5>
-     
-    <p class="card-text">Les ordinateurs aident les mathématiciens d’une multitude de manières : ils facilitent l’édition des textes et la communication entre chercheurs ; ils font des calculs numériques et symboliques, en produisant par exemple des milliers de milliards de décimales de ≠ ; grâce aux programmes « assistants de preuves », ils aident les mathématiciens à mettre au point les longues démonstrations et à les vérifier ; parfois, les algorithmes de démonstration automatique découvrent des preuves qu’aucun mathématicien n’avait trouvées.</p>
-    <a href="#" class="btn btn-primary">Lire</a>
-  </div>
-</div>
+
+        {% for article in articles %}
+        <div class="card">
+            <div class="card-header">
+                {{ article.category }}
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+                <h5>{{ article.date ? article.date|date('Y-m-d') : '' }}</h5>
+                
+                <p class="card-text">{{ article.content }}</p>
+
+                <a href="#" class="btn btn-primary">Commenter</a>
+            </div>      
+          </div>
+        {% endfor %}
+ 
+
+
 {% endblock %}
