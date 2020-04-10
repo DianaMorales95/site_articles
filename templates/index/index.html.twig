@@ -21,7 +21,7 @@
                 
                 <p class="card-text">{{ article.content }}</p>
 
-                <a href="{{ path('comment') }}" class="btn btn-primary">Commenter</a>
+                <a href="{{ path('comment', {'id': article.id }) }}" class="btn btn-primary">Commenter</a>
             </div>      
           </div>
         {% endfor %}

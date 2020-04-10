@@ -30,4 +30,14 @@ class IndexController extends AbstractController
             'articles' => $articleRepository->findAll(),
         ]);
     }
+
+      /**
+     * @Route("/{id}", name="comment", methods={"GET"})
+     */
+    public function show(Article $article): Response
+    {
+        return $this->render('comment/index.html.twig', [
+             'article' => $article,
+        ]);
+    }
 }
